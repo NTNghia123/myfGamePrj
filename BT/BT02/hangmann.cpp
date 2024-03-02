@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <cstdlib>
+#include <ctime>
 using namespace std;
 #define START 0
 #define GOOD_GUESS 1
