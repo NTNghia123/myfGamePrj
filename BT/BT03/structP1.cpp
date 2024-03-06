@@ -15,6 +15,39 @@ int main()
     print(point);
     return 0;
 }
+BÀI 2
+#include <iostream>
+using namespace std;
+struct  Point{
+  int x, y;
+};
+void print (Point p ){
+    cout << p.x << " " << p.y << endl;
+}
+void truyenThamChieu ( Point point){
+    point.x ++;
+    point.y --;
+}
+
+void truyenThamTri (Point & point  ){
+    point.x ++;
+    point.y --;
+}
+
+int main()
+{
+    Point point;
+    point.x = 10;
+    point.y = 12;
+    print(point);
+
+    truyenThamChieu(point);
+    print(point);
+
+    truyenThamTri(point);
+    print(point);
+    return 0;
+}
 
 BÀI 3
 
