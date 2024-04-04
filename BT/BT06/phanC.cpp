@@ -115,3 +115,53 @@ int main()
 
     return 0;
 }
+#include <iostream>
+
+using namespace std;
+
+void nhapKN(int k[], int n[], int &soPhanTu) {
+    soPhanTu = 0;
+    while (true) {
+        cin >> k[soPhanTu] >> n[soPhanTu];
+        if (k[soPhanTu] == -1 && n[soPhanTu] == -1) {
+            break;
+        }
+        soPhanTu++;
+    }
+}
+
+int toHop(int k, int n) {
+   int tu = 1;
+   int mau = 1;
+   for ( int i = 2; i <= n ; i++){
+       tu *= i;
+   }
+   for ( int i = 2; i <= k ; i++){
+       mau *= i;
+   }
+   int tmp = n - k;
+    for ( int i = 2; i <= tmp ; i++){
+       mau *= i;
+   }
+   return tu / mau;
+}
+
+int kiemTra(int k, int n) {
+    return (0 <= k && k <= n && 1 <= n && n <= 20) ? 1 : 0;
+}
+
+int main() {
+    int k[100], n[100], soPhanTu;
+
+    nhapKN(k, n, soPhanTu);
+
+    for (int i = 0; i < soPhanTu; ++i) {
+        if (kiemTra(k[i], n[i])) {
+            cout << toHop(k[i], n[i]) << endl;
+        } else {
+            return 0;
+        }
+    }
+
+    return 0;
+}
