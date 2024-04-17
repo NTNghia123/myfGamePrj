@@ -80,3 +80,31 @@ int main()
     return 0 ;
 }
 // tra ve dia chi bien dia phuong c 
+BAI 7
+
+#include <iostream>
+#include <cstring>
+#include <string.h>
+using namespace std;
+
+int main(int argc, const char * argv[]) {
+
+
+    const char* str1 = "helloworld";
+    const char* str2 = "helloworldhelloworld";
+
+    int len1 = strlen(str1);
+    int len2 = strlen(str2);
+    int cnt = 0;
+
+    const char* ptr2 = str2;
+    
+    for (int i = 0; i < len2 - len1; i++){
+        char p[len1];
+        strncpy(p, ptr2, len1); 
+        if (strcmp(str1, p) == 0)   cnt++;
+        ptr2 += len1; 
+    }
+    cout << cnt;
+	return 0;
+}
