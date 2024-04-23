@@ -1,17 +1,11 @@
-
 #include <iostream>
-
 using namespace std;
-int main(){
+
+int main() {
     int n = 5;
-    int * ptr = new int ;
-    *ptr = n;
+    int *ptr = new int ;
+    ptr= &n; // gan ptr dc cap phat dong cho bien dia phuong gay ro ri bo nho
+    delete ptr; // khi delete, no xoa dia chi duoc cap cho pointer ma n lai la bien dia phuong khong the xoa nen gay ra loi
 
-    int * res = new int ;
-    res = ptr;
-
-    delete ptr; // xoa ptr
-    delete res; // vi ptr da bi xoa nen res hien dang khong chi vao dau
-    return 0;
+    return 0  ;
 }
-//khi giải phóng bộ nhớ của con trỏ ( bằng delete, chương trình sẽ gặp lỗi vì địa chỉ đã bị giải phóng.
