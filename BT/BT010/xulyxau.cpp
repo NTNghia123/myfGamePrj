@@ -81,15 +81,12 @@ int length ( char const a[]) {
 char * reverse(char const * a) {
 
     const char * start = a;
-    const char * end = a;
     int len = length(a);
-
-    while ( *end != '\0') end ++;
 
     char * res = new char [len];
     char * resStart = res;
     int cnt = len - 1;
-    while ( start < end ){
+    while ( *start != '\0' ){
         *(resStart + cnt)= *start;
         cnt--;
         start ++;
