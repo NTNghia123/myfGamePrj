@@ -84,10 +84,9 @@ char * reverse(char const * a) {
     int len = length(a);
 
     char * res = new char [len];
-    char * resStart = res;
     int cnt = len - 1;
     while ( *start != '\0' ){
-        *(resStart + cnt)= *start;
+        *(res + cnt)= *start;
         cnt--;
         start ++;
     }
