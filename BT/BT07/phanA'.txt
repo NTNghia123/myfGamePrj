@@ -1,0 +1,38 @@
+Bai 2
+#include <iostream>
+using namespace std;
+
+void f(int *arr){
+	cout << sizeof(arr) << endl;
+}
+int main(){
+	int arr[3];
+	cout << sizeof(arr) << endl; 
+	f(arr); 
+	return 0;
+}
+Bai 3
+#include <iostream>
+using namespace std;
+
+int count_even(int* a, int n){
+
+    int cnt = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if( (*(a + i) % 2) == 0) cnt++;
+    }
+    return cnt; 
+}
+
+int main()
+{
+    int arr[] = {1,2,3,4,5,6,7,8,9,10};
+    int n = sizeof(arr)/sizeof(arr[0]);
+
+    cout << count_even(arr,5) << endl; // 5 phan tu dau
+    cout << count_even(arr + n - 5, 5) << endl; // 5 phan tu sau
+
+	
+    return 0;
+}

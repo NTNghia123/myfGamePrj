@@ -1,0 +1,17 @@
+
+Bai 5
+SinglyLinkedListNode* deleteNode(SinglyLinkedListNode* llist, int position) {
+SinglyLinkedListNode* p = llist;
+if (position == 0 ){
+    llist = llist->next;
+    delete p;
+}
+else{
+    SinglyLinkedListNode* prev = llist;
+    while ( --position != 0 ) prev = prev->next;
+    p = prev->next;
+    prev->next = p->next;
+    delete p;
+}
+return llist;
+}
